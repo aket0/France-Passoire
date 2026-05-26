@@ -26,6 +26,11 @@ export async function GET() {
   const { data: ipList } = await blacklistRes.json()
   const ips = ipList.slice(0, 100).map(e => e.ipAddress)
 
+  if (ips.length === 0) {
+    cache = { data: [], timestamp: now }
+    return Response.json([])
+  }
+
   const geoRes = await fetch(
     'http://ip-api.com/batch?fields=status,country,countryCode,lat,lon,query',
     {
@@ -34,6 +39,9 @@ export async function GET() {
       body: JSON.stringify(ips.map(ip => ({ query: ip }))),
     }
   )
+  if (!geoRes.ok) {
+    return Response.json({ error: 'Geolocation service error' }, { status: 502 })
+  }
   const geoData = await geoRes.json()
 
   const attacks = geoData

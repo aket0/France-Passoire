@@ -26,6 +26,7 @@ test('returns array JSON if fetch succeeds', async () => {
       }),
     })
     .mockResolvedValueOnce({
+      ok: true,
       json: async () => [
         { status: 'success', query: '1.2.3.4', lat: 55.7, lon: 37.6, country: 'Russie', countryCode: 'RU' },
         { status: 'success', query: '5.6.7.8', lat: 39.9, lon: 116.4, country: 'Chine', countryCode: 'CN' },
