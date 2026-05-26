@@ -1,49 +1,124 @@
 /* src/app/a-propos/page.module.css */
 .main {
-  padding: 32px 20px;
-  max-width: 720px;
+  background: var(--gris-fond);
+  padding: 32px 24px 48px;
+  min-height: 60vh;
+}
+
+.container {
+  max-width: 860px;
   margin: 0 auto;
 }
 
-.card {
-  background: var(--blanc);
-  border-top: 3px solid var(--rouge-marianne);
-  padding: 32px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+/* ── Disclaimer ─── */
+.disclaimer {
+  background: #fff3f3;
+  border-left: 4px solid var(--rouge-marianne);
+  padding: 12px 16px;
+  margin-bottom: 28px;
 }
 
-.title {
-  font-size: 22px;
-  color: var(--bleu-france);
-  margin-bottom: 24px;
-  font-weight: 700;
-}
-
-.section {
-  margin-bottom: 24px;
-}
-
-.section h2 {
-  font-size: 14px;
-  color: var(--bleu-france);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 10px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid var(--bordure);
-}
-
-.section p, .section li {
+.disclaimerTitle {
+  display: block;
+  color: var(--rouge-marianne);
   font-size: 13px;
-  line-height: 1.7;
+  margin-bottom: 4px;
+}
+
+.disclaimerText {
+  color: #444;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Titre page ─── */
+.h1 {
+  font-size: 26px;
+  font-weight: 700;
   color: var(--texte-principal);
-  margin-bottom: 8px;
+  margin: 0 0 6px;
 }
 
-.section ul {
-  padding-left: 18px;
+.lead {
+  font-size: 13px;
+  color: var(--texte-secondaire);
+  margin: 0 0 20px;
 }
 
-.section a {
+.divider {
+  border: none;
+  border-top: 1px solid var(--bordure);
+  margin-bottom: 28px;
+}
+
+/* ── Sections ─── */
+.section {
+  margin-bottom: 28px;
+}
+
+.section p {
+  font-size: 13px;
+  color: var(--texte-principal);
+  line-height: 1.7;
+  margin: 0 0 10px;
+}
+
+.h2 {
+  font-size: 17px;
+  font-weight: 700;
   color: var(--bleu-france);
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sectionNum {
+  background: var(--bleu-france);
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+/* ── Tableau sources ─── */
+.sourceTable {
+  border: 1px solid var(--bordure);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.sourceRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 14px;
+  font-size: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  line-height: 1.5;
+}
+
+.sourceRow:last-child { border-bottom: none; }
+
+.apiBadge {
+  background: var(--bleu-france);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.link {
+  color: var(--bleu-france);
+  text-decoration: underline;
 }
