@@ -141,8 +141,30 @@ export default function AttackMap({ attacks }) {
 
   return (
     <div className={styles.wrapper}>
-      <div ref={chartDivRef} className={styles.chart} />
-      <div className={styles.badge}>amCharts 5 · données réelles</div>
+      <div className={styles.mapHeader}>
+        <span className={styles.mapTitle}>Carte des menaces en temps réel</span>
+      </div>
+      <div className={styles.chartWrapper}>
+        <div ref={chartDivRef} className={styles.chart} />
+        <div className={styles.badge}>
+          <span className={styles.badgeDot} />
+          EN DIRECT · {attacks?.length ?? 0} arcs actifs
+        </div>
+        <div className={styles.legend}>
+          <div className={styles.legendItem}>
+            <span className={styles.legendDot} style={{ background: '#E1000F' }} />DDoS
+          </div>
+          <div className={styles.legendItem}>
+            <span className={styles.legendDot} style={{ background: '#ff6600' }} />Bruteforce
+          </div>
+          <div className={styles.legendItem}>
+            <span className={styles.legendDot} style={{ background: '#9933ff' }} />Scan
+          </div>
+          <div className={styles.legendItem}>
+            <span className={styles.legendDot} style={{ background: '#ffcc00' }} />Intrusion
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
