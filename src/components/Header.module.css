@@ -1,0 +1,64 @@
+/* src/components/Header.module.css */
+.header {
+  background: var(--bleu-france);
+  border-bottom: 3px solid var(--rouge-marianne);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: var(--blanc);
+}
+
+.subtitle {
+  font-size: 10px;
+  color: rgba(255,255,255,0.6);
+  font-style: italic;
+}
+
+.slogan {
+  margin-left: auto;
+  text-align: right;
+}
+
+.sloganLabel {
+  font-size: 9px;
+  color: rgba(255,255,255,0.5);
+}
+
+.sloganText {
+  font-size: 11px;
+  color: #ffcc00;
+  font-style: italic;
+}
+
+.nav {
+  margin-left: 24px;
+}
+
+.navLink {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.navLink:hover {
+  color: var(--blanc);
+  text-decoration: underline;
+}
