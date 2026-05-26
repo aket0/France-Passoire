@@ -1,0 +1,49 @@
+/* src/app/a-propos/page.module.css */
+.main {
+  padding: 32px 20px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--blanc);
+  border-top: 3px solid var(--rouge-marianne);
+  padding: 32px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.title {
+  font-size: 22px;
+  color: var(--bleu-france);
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.section {
+  margin-bottom: 24px;
+}
+
+.section h2 {
+  font-size: 14px;
+  color: var(--bleu-france);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.section p, .section li {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--texte-principal);
+  margin-bottom: 8px;
+}
+
+.section ul {
+  padding-left: 18px;
+}
+
+.section a {
+  color: var(--bleu-france);
+}
