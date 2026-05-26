@@ -1,0 +1,39 @@
+/* src/components/KpiBar.module.css */
+.bar {
+  display: flex;
+  border-bottom: 1px solid var(--bordure);
+  background: var(--blanc);
+}
+
+.kpi {
+  flex: 1;
+  padding: 10px 14px;
+  border-right: 1px solid var(--bordure);
+  text-align: center;
+}
+
+.kpi:last-child {
+  border-right: none;
+}
+
+.label {
+  font-size: 9px;
+  font-weight: bold;
+  color: var(--bleu-france);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.value {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--rouge-marianne);
+  line-height: 1;
+}
+
+.sub {
+  font-size: 9px;
+  color: var(--texte-secondaire);
+  margin-top: 3px;
+}
