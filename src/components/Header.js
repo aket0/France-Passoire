@@ -19,12 +19,7 @@ export default function Header({ lastUpdated = null, error = null }) {
       {/* Bandeau République Française */}
       <div className={styles.rfBand}>
         <div className={styles.rfInner}>
-          <div className={styles.tricolor}>
-            <span className={styles.tcBlue} />
-            <span className={styles.tcWhite} />
-            <span className={styles.tcRed} />
-          </div>
-          <span className={styles.rfTitle}>République Française</span>
+          <img src="/rf-logo.png" alt="République Française — Liberté, Égalité, Vulnerabilité" className={styles.rfLogo} />
           <div className={styles.rfLinks}>
             <a href="https://www.france.fr" target="_blank" rel="noopener noreferrer" className={styles.rfLink}>France.fr</a>
             <a href="https://data.gouv.fr" target="_blank" rel="noopener noreferrer" className={styles.rfLink}>data.gouv.fr</a>
@@ -37,7 +32,7 @@ export default function Header({ lastUpdated = null, error = null }) {
         <div className={styles.serviceInner}>
           <div className={styles.brand}>
             <span className={styles.title}>France Passoire</span>
-            <span className={styles.subtitle}>Ministère de la Passoire Numérique · Liberté · Égalité · Vulnérabilité</span>
+            <span className={styles.subtitle}>Ministère de la Passoire Numérique</span>
           </div>
           <nav className={styles.nav}>
             <Link href="/" className={`${styles.navLink} ${pathname === '/' ? styles.navLinkActive : ''}`}>

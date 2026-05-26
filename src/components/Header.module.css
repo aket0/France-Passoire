@@ -2,8 +2,8 @@
 
 /* ── Bandeau RF ─────────────────────── */
 .rfBand {
-  background: var(--bleu-rf);
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  background: #fff;
+  border-bottom: 1px solid var(--bordure);
 }
 .rfInner {
   max-width: 1200px;
@@ -13,24 +13,11 @@
   align-items: center;
   gap: 10px;
 }
-.tricolor {
-  display: flex;
-  width: 22px;
-  height: 22px;
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 1px;
-  overflow: hidden;
+.rfLogo {
+  height: 64px;
+  width: auto;
+  display: block;
   flex-shrink: 0;
-}
-.tcBlue  { background: #002395; flex: 1; }
-.tcWhite { background: #ffffff; flex: 1; }
-.tcRed   { background: #ED2939; flex: 1; }
-
-.rfTitle {
-  color: #fff;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.2px;
 }
 .rfLinks {
   margin-left: auto;
@@ -38,11 +25,11 @@
   gap: 16px;
 }
 .rfLink {
-  color: rgba(255,255,255,0.7);
+  color: var(--bleu-rf);
   font-size: 11px;
   text-decoration: none;
 }
-.rfLink:hover { color: #fff; text-decoration: underline; }
+.rfLink:hover { color: var(--bleu-france); text-decoration: underline; }
 
 /* ── Header service ─────────────────── */
 .serviceHeader {
