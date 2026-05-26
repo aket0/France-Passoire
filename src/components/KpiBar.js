@@ -2,7 +2,7 @@
 import { getCheeseLevel } from '@/lib/cheese'
 import styles from './KpiBar.module.css'
 
-export default function KpiBar({ attackCount }) {
+export default function KpiBar({ attackCount = 0 }) {
   const cheese = getCheeseLevel(attackCount)
 
   return (
