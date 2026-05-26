@@ -21,10 +21,11 @@ function topBy(attacks, key, n = 5) {
     .slice(0, n)
 }
 
-export default function Sidebar({ attacks }) {
+export default function Sidebar({ attacks = [] }) {
   const recent = [...attacks].reverse().slice(0, 10)
   const topCountries = topBy(attacks, 'countryCode')
   const topTargets = topBy(attacks, 'target')
+  const countryNames = Object.fromEntries(attacks.map(a => [a.countryCode, a.country]))
 
   return (
     <aside className={styles.sidebar}>
@@ -33,7 +34,7 @@ export default function Sidebar({ attacks }) {
         <div className={styles.feedList}>
           {recent.length === 0 && <span style={{ fontSize: 10, color: 'var(--texte-secondaire)' }}>Chargement...</span>}
           {recent.map((a, i) => (
-            <div key={i} className={styles.feedItem} style={{ borderColor: a.color }}>
+            <div key={`${a.ip}-${i}`} className={styles.feedItem} style={{ borderColor: a.color }}>
               <span className={styles.feedCountry}>{getFlag(a.countryCode)} {a.country}</span>
               {' → '}
               <span className={styles.feedTarget}>{a.target}</span>
@@ -47,15 +48,12 @@ export default function Sidebar({ attacks }) {
       <div className={styles.panel}>
         <div className={styles.panelTitle}>🏆 Top attaquants</div>
         <div className={styles.rankList}>
-          {topCountries.map(([code, count], i) => {
-            const attack = attacks.find(a => a.countryCode === code)
-            return (
-              <div key={code} className={styles.rankItem}>
-                <span>{getFlag(code)} {attack?.country || code}</span>
-                <span className={styles.rankCount}>{count}</span>
-              </div>
-            )
-          })}
+          {topCountries.map(([code, count]) => (
+            <div key={code} className={styles.rankItem}>
+              <span>{getFlag(code)} {countryNames[code] || code}</span>
+              <span className={styles.rankCount}>{count}</span>
+            </div>
+          ))}
         </div>
       </div>
 

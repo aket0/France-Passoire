@@ -15,7 +15,7 @@ export default function Header() {
       </nav>
       <div className={styles.slogan}>
         <div className={styles.sloganLabel}>Slogan officiel</div>
-        <div className={styles.sloganText}>"Suivez en direct l'état de la passoire"</div>
+        <div className={styles.sloganText}>&ldquo;Suivez en direct l&apos;état de la passoire&rdquo;</div>
       </div>
     </header>
   )
