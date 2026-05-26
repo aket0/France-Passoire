@@ -8,7 +8,6 @@ export default function Footer() {
         <div className={styles.col}>
           <div className={styles.colBrand}>
             <img src="/rf-logo.png" alt="République Française — Liberté, Égalité, Vulnerabilité" className={styles.rfLogo} />
-            <span className={styles.brandName}>France Passoire</span>
           </div>
           <p className={styles.disclaimer}>
             Site parodique et satirique.<br />
