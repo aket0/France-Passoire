@@ -6,6 +6,13 @@ const FLAG_MAP = {
   BR: '🇧🇷', IN: '🇮🇳', DE: '🇩🇪', NL: '🇳🇱', UA: '🇺🇦',
 }
 
+const TYPE_COLORS = {
+  DDoS: '#E1000F',
+  Bruteforce: '#ff6600',
+  Scan: '#9933ff',
+  Intrusion: '#ffcc00',
+}
+
 function getFlag(code) {
   return FLAG_MAP[code] || '🌐'
 }
@@ -27,30 +34,50 @@ export default function Sidebar({ attacks = [] }) {
   const topTargets = topBy(attacks, 'target')
   const countryNames = Object.fromEntries(attacks.map(a => [a.countryCode, a.country]))
 
+  const maxCountry = topCountries[0]?.[1] || 1
+  const maxTarget = topTargets[0]?.[1] || 1
+
   return (
     <aside className={styles.sidebar}>
+
       <div className={styles.panel}>
-        <div className={styles.panelTitle}>⚡ Flux en direct</div>
+        <div className={styles.panelHeader}>⚡ Flux en direct</div>
         <div className={styles.feedList}>
-          {recent.length === 0 && <span style={{ fontSize: 10, color: 'var(--texte-secondaire)' }}>Chargement...</span>}
+          {recent.length === 0 && (
+            <div className={styles.empty}>Chargement…</div>
+          )}
           {recent.map((a, i) => (
-            <div key={`${a.ip}-${i}`} className={styles.feedItem} style={{ borderColor: a.color }}>
+            <div key={`${a.ip}-${i}`} className={styles.feedItem}>
+              <span className={styles.feedDot} style={{ background: a.color }} />
               <span className={styles.feedCountry}>{getFlag(a.countryCode)} {a.country}</span>
-              {' → '}
+              <span className={styles.feedArrow}>→</span>
               <span className={styles.feedTarget}>{a.target}</span>
-              {' '}
-              <span className={styles.feedType} style={{ color: a.color }}>{a.attackType}</span>
+              <span
+                className={styles.feedBadge}
+                style={{
+                  background: TYPE_COLORS[a.attackType] ?? '#666',
+                  color: a.attackType === 'Intrusion' ? '#333' : '#fff',
+                }}
+              >
+                {a.attackType}
+              </span>
             </div>
           ))}
         </div>
       </div>
 
       <div className={styles.panel}>
-        <div className={styles.panelTitle}>🏆 Top attaquants</div>
+        <div className={styles.panelHeader}>🏆 Top attaquants</div>
         <div className={styles.rankList}>
           {topCountries.map(([code, count]) => (
             <div key={code} className={styles.rankItem}>
-              <span>{getFlag(code)} {countryNames[code] || code}</span>
+              <span className={styles.rankLabel}>{getFlag(code)} {countryNames[code] || code}</span>
+              <div className={styles.rankBarTrack}>
+                <div
+                  className={styles.rankBar}
+                  style={{ width: `${(count / maxCountry) * 100}%` }}
+                />
+              </div>
               <span className={styles.rankCount}>{count}</span>
             </div>
           ))}
@@ -58,16 +85,23 @@ export default function Sidebar({ attacks = [] }) {
       </div>
 
       <div className={styles.panel}>
-        <div className={styles.panelTitle}>🎯 Plus ciblées</div>
+        <div className={styles.panelHeader}>🎯 Institutions les plus ciblées</div>
         <div className={styles.rankList}>
           {topTargets.map(([name, count]) => (
             <div key={name} className={styles.rankItem}>
-              <span>{name}</span>
+              <span className={styles.rankLabel}>{name}</span>
+              <div className={styles.rankBarTrack}>
+                <div
+                  className={styles.rankBar}
+                  style={{ width: `${(count / maxTarget) * 100}%` }}
+                />
+              </div>
               <span className={styles.rankCount}>{count}</span>
             </div>
           ))}
         </div>
       </div>
+
     </aside>
   )
 }

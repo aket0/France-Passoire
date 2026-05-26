@@ -1,67 +1,111 @@
 /* src/components/Sidebar.module.css */
 .sidebar {
-  width: 280px;
+  width: 300px;
   flex-shrink: 0;
-  background: var(--sidebar-fond);
-  border-left: 1px solid var(--bordure);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  gap: 12px;
 }
 
 .panel {
-  padding: 10px 12px;
-  border-bottom: 1px solid var(--bordure);
+  background: var(--blanc);
+  border: 1px solid var(--bordure);
+  overflow: hidden;
 }
 
-.panel:last-child {
-  border-bottom: none;
+.panelHeader {
+  background: var(--bleu-france);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 14px;
+  letter-spacing: 0.3px;
 }
 
-.panelTitle {
-  font-size: 9px;
-  font-weight: bold;
-  color: var(--bleu-france);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 8px;
-}
-
+/* ── Flux en direct ─── */
 .feedList {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  max-height: 160px;
-  overflow-y: auto;
+}
+
+.empty {
+  padding: 8px 14px;
+  font-size: 11px;
+  color: var(--texte-secondaire);
 }
 
 .feedItem {
-  background: var(--blanc);
-  border-left: 2px solid;
-  padding: 4px 8px;
-  font-size: 10px;
-  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  font-size: 11px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.feedItem:last-child { border-bottom: none; }
+
+.feedDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
-.feedCountry { color: var(--texte-secondaire); }
-.feedTarget { font-weight: bold; }
-.feedType { font-size: 9px; }
+.feedCountry { color: #333; font-weight: 600; }
+.feedArrow { color: #bbb; font-size: 10px; }
+.feedTarget { color: var(--bleu-france); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
+.feedBadge {
+  font-size: 9px;
+  padding: 2px 5px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+/* ── Classements ─── */
 .rankList {
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
 .rankItem {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
   font-size: 11px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.rankItem:last-child { border-bottom: none; }
+
+.rankLabel {
+  width: 110px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--texte-principal);
+}
+
+.rankBarTrack {
+  flex: 1;
+  background: #f0f0f0;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.rankBar {
+  height: 3px;
+  border-radius: 2px;
+  background: var(--bleu-france);
+  transition: width 0.4s ease;
 }
 
 .rankCount {
-  font-weight: bold;
-  color: var(--rouge-marianne);
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--bleu-france);
+  min-width: 28px;
+  text-align: right;
 }
