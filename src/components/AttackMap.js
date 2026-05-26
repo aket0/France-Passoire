@@ -17,8 +17,8 @@ export default function AttackMap({ attacks }) {
     let root
 
     async function init() {
-      const am5 = (await import('@amcharts/amcharts5')).default
-      const am5map = (await import('@amcharts/amcharts5/map')).default
+      const am5 = await import('@amcharts/amcharts5')
+      const am5map = await import('@amcharts/amcharts5/map')
       const geodata = (await import('@amcharts/amcharts5-geodata/worldLow')).default
       const AnimatedTheme = (await import('@amcharts/amcharts5/themes/Animated')).default
 
