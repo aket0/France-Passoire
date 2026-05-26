@@ -1,13 +1,98 @@
 /* src/components/Footer.module.css */
 .footer {
   background: var(--bleu-france);
-  color: rgba(255,255,255,0.6);
-  font-size: 10px;
-  text-align: center;
-  padding: 8px 20px;
-  line-height: 1.6;
+  color: #fff;
+  border-top: 3px solid var(--rouge-marianne);
 }
 
-.footer a {
-  color: rgba(255,255,255,0.7);
+.footerMain {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 24px 20px;
+  display: flex;
+  gap: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+/* ── Colonnes ─── */
+.col { flex: 1; }
+
+.colBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.tricolor {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.tcBlue  { background: #002395; flex: 1; }
+.tcWhite { background: #ffffff; flex: 1; }
+.tcRed   { background: #ED2939; flex: 1; }
+
+.brandName {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.disclaimer {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.colTitle {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 10px;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footerLink {
+  color: rgba(255,255,255,0.75);
+  font-size: 12px;
+  text-decoration: none;
+}
+.footerLink:hover { color: #fff; text-decoration: underline; }
+
+.statList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+}
+
+/* ── Bande légale ─── */
+.footerLegal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+}
+
+.version {
+  font-family: monospace;
+  color: rgba(255,255,255,0.2);
 }
