@@ -1,39 +1,79 @@
 /* src/components/KpiBar.module.css */
-.bar {
-  display: flex;
-  border-bottom: 1px solid var(--bordure);
+.section {
+  background: var(--gris-fond);
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sectionHeader {
+  margin-bottom: 16px;
+}
+
+.pageTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--texte-principal);
+  margin: 0 0 4px;
+}
+
+.pageSubtitle {
+  font-size: 13px;
+  color: var(--texte-secondaire);
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.tile {
   background: var(--blanc);
-}
-
-.kpi {
-  flex: 1;
-  padding: 10px 14px;
-  border-right: 1px solid var(--bordure);
-  text-align: center;
-}
-
-.kpi:last-child {
-  border-right: none;
+  border: 1px solid var(--bordure);
+  border-top: 4px solid var(--accent);
+  padding: 16px 18px;
 }
 
 .label {
-  font-size: 9px;
-  font-weight: bold;
-  color: var(--bleu-france);
+  font-size: 11px;
+  color: var(--texte-secondaire);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 4px;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
 }
 
 .value {
-  font-size: 22px;
-  font-weight: bold;
-  color: var(--rouge-marianne);
+  font-size: 32px;
+  font-weight: 700;
   line-height: 1;
 }
 
 .sub {
-  font-size: 9px;
-  color: var(--texte-secondaire);
-  margin-top: 3px;
+  font-size: 11px;
+  color: #888;
+  margin-top: 6px;
+}
+
+.subCensored {
+  font-size: 10px;
+  color: #aaa;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.progressTrack {
+  margin-top: 10px;
+  background: #eee;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.progressBar {
+  height: 4px;
+  border-radius: 2px;
+  transition: width 0.5s ease;
 }

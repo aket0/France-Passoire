@@ -5,11 +5,10 @@ import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import Header from './Header'
 import Footer from './Footer'
-import KpiBar from './KpiBar'
+import KpiGrid from './KpiBar'
 import Sidebar from './Sidebar'
 import styles from './Dashboard.module.css'
 
-// Import dynamique pour éviter le SSR d'amCharts
 const AttackMap = dynamic(() => import('./AttackMap'), { ssr: false })
 
 const POLL_INTERVAL = 90_000
@@ -38,22 +37,17 @@ export default function Dashboard() {
     return () => clearInterval(id)
   }, [])
 
-  const timeStr = lastUpdated
-    ? lastUpdated.toLocaleTimeString('fr-FR')
-    : 'chargement...'
-
   return (
     <div className={styles.page}>
-      <Header />
-      <KpiBar attackCount={attacks.length} />
-      <div className={styles.main}>
-        <AttackMap attacks={attacks} />
-        <Sidebar attacks={attacks} />
+      <Header lastUpdated={lastUpdated} error={error} />
+      <div className={styles.content}>
+        <KpiGrid attackCount={attacks.length} />
+        <div className={styles.main}>
+          <AttackMap attacks={attacks} />
+          <Sidebar attacks={attacks} />
+        </div>
       </div>
       <Footer />
-      <div className={styles.status}>
-        {error ? `⚠ ${error}` : `✓ màj ${timeStr}`}
-      </div>
     </div>
   )
 }
