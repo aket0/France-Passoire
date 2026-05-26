@@ -8,6 +8,6 @@ const LEVELS = [
 
 export function getCheeseLevel(attackCount) {
   const pct = Math.min(99, Math.round((attackCount / 2000) * 100))
-  const level = LEVELS.find(l => pct >= l.threshold)
+  const level = LEVELS.find(l => pct >= l.threshold) ?? LEVELS[LEVELS.length - 1]
   return { pct, label: level.label, emoji: '🧀' }
 }
