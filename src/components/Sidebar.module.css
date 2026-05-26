@@ -1,0 +1,67 @@
+/* src/components/Sidebar.module.css */
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  background: var(--sidebar-fond);
+  border-left: 1px solid var(--bordure);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panel {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.panel:last-child {
+  border-bottom: none;
+}
+
+.panelTitle {
+  font-size: 9px;
+  font-weight: bold;
+  color: var(--bleu-france);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.feedList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.feedItem {
+  background: var(--blanc);
+  border-left: 2px solid;
+  padding: 4px 8px;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.feedCountry { color: var(--texte-secondaire); }
+.feedTarget { font-weight: bold; }
+.feedType { font-size: 9px; }
+
+.rankList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rankItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+}
+
+.rankCount {
+  font-weight: bold;
+  color: var(--rouge-marianne);
+  font-size: 12px;
+}
