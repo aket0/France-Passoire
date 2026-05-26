@@ -29,11 +29,11 @@ export default function AProposPage() {
             <p>Les données affichées proviennent exclusivement de sources publiques :</p>
             <ul>
               <li>
-                <a href="https://www.abuseipdb.com" target="_blank" rel="noopener">AbuseIPDB</a> —
+                <a href="https://www.abuseipdb.com" target="_blank" rel="noopener noreferrer">AbuseIPDB</a> —
                 base de données publique d&apos;adresses IP signalées comme malveillantes par la communauté.
               </li>
               <li>
-                <a href="https://ip-api.com" target="_blank" rel="noopener">ip-api.com</a> —
+                <a href="https://ip-api.com" target="_blank" rel="noopener noreferrer">ip-api.com</a> —
                 service de géolocalisation d&apos;adresses IP.
               </li>
             </ul>
