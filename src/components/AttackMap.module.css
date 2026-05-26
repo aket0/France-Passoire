@@ -31,6 +31,15 @@
   min-height: 420px;
 }
 
+@media (max-width: 768px) {
+  .chartWrapper {
+    min-height: 280px;
+  }
+  .chart {
+    min-height: 280px;
+  }
+}
+
 .badge {
   position: absolute;
   top: 12px;
@@ -65,12 +74,14 @@
   position: absolute;
   bottom: 12px;
   left: 12px;
+  right: 12px;
   background: rgba(0,20,50,0.82);
   border: 1px solid rgba(255,255,255,0.1);
   padding: 7px 12px;
   border-radius: 3px;
   display: flex;
   gap: 14px;
+  flex-wrap: wrap;
 }
 
 .legendItem {

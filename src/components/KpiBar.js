@@ -10,6 +10,7 @@ export default function KpiGrid({ attackCount = 0 }) {
         <h1 className={styles.pageTitle}>Tableau de bord national</h1>
         <p className={styles.pageSubtitle}>Surveillance en temps réel des cyber-menaces visant les institutions françaises</p>
       </div>
+      <div className={styles.gridScroll}>
       <div className={styles.grid}>
         <div className={styles.tile} style={{ '--accent': 'var(--bleu-france)' }}>
           <div className={styles.label}>Attaques actives</div>
@@ -41,6 +42,7 @@ export default function KpiGrid({ attackCount = 0 }) {
             <div className={styles.progressBar} style={{ width: `${cheese.pct}%`, background: '#9933ff' }} />
           </div>
         </div>
+      </div>
       </div>
     </section>
   )

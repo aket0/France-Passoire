@@ -7,6 +7,12 @@
   gap: 12px;
 }
 
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+
 .panel {
   background: var(--blanc);
   border: 1px solid var(--bordure);

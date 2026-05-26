@@ -31,6 +31,18 @@
   gap: 16px;
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 16px 12px;
+  }
+  .gridScroll {
+    overflow-x: auto;
+  }
+  .grid {
+    grid-template-columns: repeat(4, minmax(160px, 1fr));
+  }
+}
+
 .tile {
   background: var(--blanc);
   border: 1px solid var(--bordure);
