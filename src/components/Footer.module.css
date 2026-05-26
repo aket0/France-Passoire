@@ -20,26 +20,25 @@
 .colBrand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 10px;
+  background: #fff;
+  padding: 8px 10px;
+  border-radius: 3px;
+  width: fit-content;
 }
 
-.tricolor {
-  display: flex;
-  width: 20px;
-  height: 20px;
-  border: 1px solid rgba(255,255,255,0.3);
-  overflow: hidden;
+.rfLogo {
+  height: 52px;
+  width: auto;
+  display: block;
   flex-shrink: 0;
 }
-.tcBlue  { background: #002395; flex: 1; }
-.tcWhite { background: #ffffff; flex: 1; }
-.tcRed   { background: #ED2939; flex: 1; }
 
 .brandName {
   font-size: 15px;
   font-weight: 700;
-  color: #fff;
+  color: var(--bleu-france);
 }
 
 .disclaimer {

@@ -7,11 +7,7 @@ export default function Footer() {
       <div className={styles.footerMain}>
         <div className={styles.col}>
           <div className={styles.colBrand}>
-            <div className={styles.tricolor}>
-              <span className={styles.tcBlue} />
-              <span className={styles.tcWhite} />
-              <span className={styles.tcRed} />
-            </div>
+            <img src="/rf-logo.png" alt="République Française — Liberté, Égalité, Vulnerabilité" className={styles.rfLogo} />
             <span className={styles.brandName}>France Passoire</span>
           </div>
           <p className={styles.disclaimer}>
